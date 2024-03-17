@@ -1,0 +1,128 @@
+Script started on 2024-03-17 18:20:23+07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="132" LINES="40"]
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo systemctl is-enabled nginx
+[?2004l[sudo] пароль для user: 
+enabled
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo systemctl disable nginx.service 
+[?2004lSynchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable nginx
+Removed /etc/systemd/system/multi-user.target.wants/nginx.service.
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo systemctl disable nginx.service [6Pis-enabled nginx
+[?2004ldisabled
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo eb[Knable nginxcustom.service 
+[?2004lsudo: enable: команда не найдена
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo enable nginxcustom.service [1Psystemctl is-enabled nginx[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K enable nginxcustom.service 
+[?2004lCreated symlink /etc/systemd/system/multi-user.target.wants/nginxcustom.service → /etc/systemd/system/nginxcustom.service.
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo systemctl enable nginxcustom.service [10P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Psystemctl is-enabled nginx
+[?2004ldisabled
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ sudo systemctl is-enabled nginxcustom.service 
+[?2004lenabled
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ ex[K[Kcat /etc/nginx/
+conf.d/            koi-utf            modules-available/ proxy_params       sites-enabled/     win-utf
+fastcgi.conf       koi-win            modules-enabled/   scgi_params        snippets/          
+fastcgi_params     mime.types         nginx.conf         sites-available/   uwsgi_params       
+]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ cat /etc/nginx/nginx.conf 
+[?2004luser www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+
+	##
+	# Basic Settings
+	##
+
+	sendfile on;
+	tcp_nopush on;
+	types_hash_max_size 2048;
+	# server_tokens off;
+
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	##
+	# SSL Settings
+	##
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+	ssl_prefer_server_ciphers on;
+
+	##
+	# Logging Settings
+	##
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	##
+	# Gzip Settings
+	##
+
+	gzip on;
+
+	# gzip_vary on;
+	# gzip_proxied any;
+	# gzip_comp_level 6;
+	# gzip_buffers 16 8k;
+	# gzip_http_version 1.1;
+	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+	##
+	# Virtual Host Configs
+	##
+
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#	# See sample authentication script at:
+#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#	# auth_http localhost/auth.php;
+#	# pop3_capabilities "TOP" "USER";
+#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#	server {
+#		listen     localhost:110;
+#		protocol   pop3;
+#		proxy      on;
+#	}
+#
+#	server {
+#		listen     localhost:143;
+#		protocol   imap;
+#		proxy      on;
+#	}
+#}
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ cat /etc/systemd/system/nginxcustom.service 
+[?2004l[Unit]
+Description=Nginx for codeby devops
+After=network.target nss-lookup.target
+Wants=sshd.service
+
+[Service]
+Type=forking
+PIDFile=/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t -q -g 'daemon on; master_process on;'
+ExecStart=/usr/sbin/nginx -g 'daemon on; master_process on;'
+ExecReload=/usr/sbin/nginx -g 'daemon on; master_process on;' -s reload
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ exit
+[?2004lexit
+
+Script done on 2024-03-17 18:22:51+07:00 [COMMAND_EXIT_CODE="0"]

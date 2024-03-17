@@ -1,0 +1,26 @@
+Script started on 2024-03-17 17:45:24+07:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ java --version
+[?2004lopenjdk 11.0.22 2024-01-16 LTS
+OpenJDK Runtime Environment Zulu11.70+15-CA (build 11.0.22+7-LTS)
+OpenJDK 64-Bit Server VM Zulu11.70+15-CA (build 11.0.22+7-LTS, mixed mode)
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ java --versionsudo apt-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [15Pjava --version
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kjava --versionsudo apt-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [C[C[C[C[C[C[C[C remove openjdk-17-jre[K[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [C[C[C[C[C[C[C[C-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [C[C[C[C[C[C[C[C[9P remove java
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [C[C[C[C[C[C[C[C remove openjdk-17-jre[K[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [C[C[C[C[C[C[C[C-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [15Pjava --version
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kjava --versionsudo apt-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [15Pjava --version
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kjava --versionsudo apt-get install openjdk-17-jre[A]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ [15Pjava --version
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ksudo upa[Kdate-alternatives --co nfig java
+[?2004l[sudo] пароль для user: 
+Есть 2 варианта для альтернативы java (предоставляет /usr/bin/java).
+
+  Выбор   Путь                             Приор Состояние
+------------------------------------------------------------
+  0            /usr/lib/jvm/zulu-17-amd64/bin/java   2174800   автоматический режим
+* 1            /usr/lib/jvm/zulu-11-amd64/bin/java   2117000   ручной режим
+  2            /usr/lib/jvm/zulu-17-amd64/bin/java   2174800   ручной режим
+
+Нажмите «enter», чтобы не менять текущий выбор[*], или введите нужное число: 2
+update-alternatives: используется /usr/lib/jvm/zulu-17-amd64/bin/java для предоставления /usr/bin/java (java) в ручном режиме
+[?2004h]0;user@DevOps-Ubuntu: ~/devops/codeby-devops/lesson4[01;32muser@DevOps-Ubuntu[00m:[01;34m~/devops/codeby-devops/lesson4[00m$ exit
+[?2004lexit
+
+Script done on 2024-03-17 17:46:09+07:00 [COMMAND_EXIT_CODE="0"]
